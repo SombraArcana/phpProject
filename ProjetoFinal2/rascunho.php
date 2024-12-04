@@ -54,10 +54,6 @@ class Catalogo{
         $Evolutions = Implodas($pokemon->Evolutions);
         echo "<p class='pokemon-evolutions'>Evoluções: $Evolutions</p>";
     }
-    public static function ShowSuperEvolutions($pokemon){
-        $SuperEvolutions = Implodas($pokemon->SuperEvolutions);
-        echo "<p class='pokemon-evolutions'>Mega Evolution: $SuperEvolutions</p>";
-    }
 
     static function ShowPokemon($pokemon){
         echo "<div class='pokemon-card'>";
@@ -67,7 +63,6 @@ class Catalogo{
         Catalogo::ShowAttacks($pokemon);
         Catalogo::ShowPowers($pokemon);
         Catalogo::ShowEvolutions($pokemon);
-        Catalogo::ShowSuperEvolutions($pokemon);
         echo "</div>";
     }
 }
@@ -79,7 +74,6 @@ class Pokemon{
     public $Attacks;
     public $Powers;
     public $Evolutions;
-    public $SuperEvolutions;
 
     function __construct($id){
         $poketable = GetPokemon($id);
@@ -89,7 +83,6 @@ class Pokemon{
         $this->Attacks = $poketable["Attacks"];
         $this->Powers = $poketable["Powers"];
         $this->Evolutions = $poketable["Evolutions"];
-        $this->SuperEvolutions = $poketable["Mega_Evolution"];
     }
 }
 ?>
